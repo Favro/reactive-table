@@ -6,7 +6,8 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
-    api.versionsFrom("METEOR@0.9.0");
+    api.versionsFrom('METEOR@1.10.2');
+
     api.use('templating', 'client');
     api.use('jquery', 'client');
     api.use('underscore', ['server', 'client']);
@@ -31,6 +32,8 @@ Package.on_use(function (api) {
 });
 
 Package.on_test(function (api) {
+    api.versionsFrom('METEOR@1.10.2');
+
     api.use('templating', 'client');
     api.use('jquery', 'client');
     api.use('underscore', ['client', 'server']);
@@ -59,12 +62,12 @@ Package.on_test(function (api) {
     api.add_files('test/test_settings.js', 'client');
     api.add_files('test/test_fields_tmpl.html', 'client');
     api.add_files('test/test_fields.js', 'client');
-  
+
     api.use('accounts-password@1.0.6', ['client', 'server']);
     api.add_files('test/test_reactivity_server.js', 'server');
     api.add_files('test/test_reactivity.html', 'client');
     api.add_files('test/test_reactivity.js', 'client');
-  
+
     api.add_files('test/test_sorting.js', 'client');
     api.add_files('test/test_filtering_server.js', 'server');
     api.add_files('test/test_filtering.js', 'client');
